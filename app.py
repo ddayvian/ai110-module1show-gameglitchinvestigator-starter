@@ -35,16 +35,16 @@ def check_guess(guess, secret):
 
     try:
         if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
+            return "Too High", "📉 Go LOWER!"  # FIX: Corrected hint logic with Copilot assistance
         else:
-            return "Too Low", "📉 Go LOWER!"
+            return "Too Low", "📈 Go HIGHER!"  # FIX: Corrected hint logic with Copilot assistance
     except TypeError:
         g = str(guess)
         if g == secret:
             return "Win", "🎉 Correct!"
         if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
+            return "Too High", "📉 Go LOWER!"  # FIX: Corrected hint logic with Copilot assistance
+        return "Too Low", "📈 Go HIGHER!"  # FIX: Corrected hint logic with Copilot assistance
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
@@ -132,9 +132,13 @@ with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
-    st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
-    st.success("New game started.")
+    st.session_state.attempts = 0  # Reset attempts
+    st.session_state.history = []  # Clear history
+    st.session_state.score = 0  # Reset score
+    st.session_state.status = "playing"  # Reset game status
+    low, high = get_range_for_difficulty(difficulty)  # Ensure range matches difficulty
+    st.session_state.secret = random.randint(low, high)  # Regenerate secret within range
+    st.success("New game started.")  # FIX: Improved "New Game" button logic with Copilot assistance
     st.rerun()
 
 if st.session_state.status != "playing":
