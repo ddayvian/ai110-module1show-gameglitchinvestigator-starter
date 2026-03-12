@@ -40,14 +40,20 @@ AI def helped me design and understand all my tests that was needed, by one aski
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+Every time you clicked "Submit" or interacted with the app, Streamlit would rerun the entire script from top to bottom, which regenerated a new random number each time unless it was protected by session state.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+Streamlit reruns your code every time someone clicks a button or interacts with the app, like restarting a video game, but session state is like a memory box that survives each restart and remembers important variables between reruns.
 - What change did you make that finally gave the game a stable secret number?
+I wrapped the secret number generation in an `if "secret" not in st.session_state:` check so that the random number is only created once, and then remembered across all future reruns of the app.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
+one habit id like to reuse is def pytest.
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
+next time what i would do differently is def setup better prompts. and use claude instead of copilot github
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+this proj changed the way i think by allowing me to see the errors of ai coding and that we as humans must double checked them as well. yes it can be helpful to have everything done for you but we are the cleaners, we must make sure what is written is clean and not messy.

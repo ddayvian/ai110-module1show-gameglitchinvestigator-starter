@@ -26,12 +26,16 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+the game purpose was to play a random number guessing game, type in a random number and hope to get it, while you are given hints that cna indicate if your number is too high or too low. 
 - [ ] Detail which bugs you found.
+bugs i found was the secret hints given did not help at all in the direction of the secret number. as well as the difficulty ranges did not match the difficulty at all.
+i also fixed the new game button not working.
 - [ ] Explain what fixes you applied.
+i fixed the new game button not working properly such as not reseting its history to let a new game start, fixed the hints actually helping in the direction of the secret number. i as well fixed the difficulty ranges.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [Fixed Game Screenshot] [winninggame.png]
 
 ## 🚀 Stretch Features
 
